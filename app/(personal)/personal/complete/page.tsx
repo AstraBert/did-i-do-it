@@ -18,7 +18,7 @@ import {
 import { completeTask, getUserDetail, taskToComplete } from "./action";
 import { sendEmail } from '@/utils/supabase/edge-functions';
 
-export function isValidUUID(uuid: string): boolean {
+function isValidUUID(uuid: string): boolean {
   return uuid.length == 32
 }
 
