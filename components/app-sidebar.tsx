@@ -23,7 +23,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { user } from "@prisma/client";
+import { type user } from "@/app/generated/prisma";
 
 const data = {
   navMain: [
