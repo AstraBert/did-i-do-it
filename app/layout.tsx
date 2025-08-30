@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Auth System",
-  description: "Auth System",
+  title: "Did I Do It?",
+  description: "Now I remember!",
 };
 
 export default function RootLayout({
@@ -26,10 +26,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {/* Replace this with your own analytics script */}
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="352eab6a-a921-4d6b-b73c-3282f2a38d2f"></script>
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

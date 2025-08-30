@@ -15,7 +15,7 @@ import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
 
 import { authClient } from "@/lib/auth-client";
-import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
+import { Alert, AlertDescription } from "../ui/alert";
 import { Terminal } from "lucide-react";
 
 import { IconLoader } from "@tabler/icons-react";
@@ -48,7 +48,7 @@ export function LoginForm({
         /**
          * a url to redirect to after the user verifies their email (optional)
          */
-        callbackURL: "/dashboard",
+        callbackURL: "/personal",
         /**
          * remember the user session after the browser is closed.
          * @default true
@@ -76,7 +76,7 @@ export function LoginForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle>Login to your account</CardTitle>
+          <CardTitle className="text-purple-400">Login to your account</CardTitle>
           <CardDescription>
             Enter your email below to login to your account
           </CardDescription>
@@ -91,7 +91,7 @@ export function LoginForm({
           <form onSubmit={(e) => handleSubmit(e)}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-3">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email" className="font-semibold text-purple-400">Email</Label>
                 <Input
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
@@ -103,13 +103,7 @@ export function LoginForm({
               </div>
               <div className="grid gap-3">
                 <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                  <a
-                    href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                  >
-                    Forgot your password?
-                  </a>
+                  <Label htmlFor="password" className="font-semibold text-purple-400">Password</Label>
                 </div>
                 <Input
                   onChange={(e) => setPassword(e.target.value)}
@@ -120,21 +114,18 @@ export function LoginForm({
                 />
               </div>
               <div className="flex flex-col gap-3">
-                <Button disabled={loading} type="submit" className="w-full">
+                <Button disabled={loading} type="submit" className="w-full bg-purple-300 dark:bg-purple-500 dark:hover:bg-white dark:hover:text-purple-500 dark:text-white text-black hover:bg-purple-500 hover:text-white shadow-lg">
                   {loading ? (
                     <IconLoader className="animate-spin" stroke={2} />
                   ) : (
                     "Login"
                   )}
                 </Button>
-                <Button variant="outline" className="w-full">
-                  Login with Google
-                </Button>
               </div>
             </div>
             <div className="mt-4 text-center text-sm">
               Don&apos;t have an account?{" "}
-              <a href="/signup" className="underline underline-offset-4">
+              <a href="/signup" className="underline underline-offset-4 text-purple-400 hover:text-purple-600 dark:hover:text-white">
                 Sign up
               </a>
             </div>

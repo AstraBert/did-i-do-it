@@ -59,10 +59,10 @@ model verification {
 }
 
 model tasks {
-  id         Int    @id @default(autoincrement())
-  userId     String
-  title      String
-  content    String
-  completed  Boolean   @default(false)
-  createdAt  DateTime?
+  id        Int       @id @default(autoincrement())
+  userId    String
+  title     String
+  content   String
+  completed Boolean   @default(false)
+  createdAt DateTime?
 }

@@ -2,27 +2,15 @@
 
 import * as React from "react";
 import {
-  IconCamera,
-  IconChartBar,
-  IconCopy,
-  IconDashboard,
-  IconDatabase,
-  IconFileAi,
-  IconFileDescription,
-  IconFileWord,
-  IconFolder,
-  IconHelp,
   IconHome,
-  IconInnerShadowTop,
-  IconListDetails,
-  IconReport,
-  IconSearch,
+  IconUserCheck,
   IconSettings,
   IconUserCircle,
-  IconUsers,
+  IconBrandGithub,
+  IconBubblePlus,
+  IconLibraryPlus
 } from "@tabler/icons-react";
 
-import { NavDocuments } from "@/components/nav-documents";
 import { NavMain } from "@/components/nav-main";
 import { NavSecondary } from "@/components/nav-secondary";
 import { NavUser } from "@/components/nav-user";
@@ -40,87 +28,24 @@ import { user } from "@prisma/client";
 const data = {
   navMain: [
     {
-      title: "Dashboard",
-      url: "/dashboard",
-      icon: IconDashboard,
+      title: "Personal Space",
+      url: "/personal",
+      icon: IconUserCheck,
+    },
+    {
+      title: "Create a Task",
+      url: "/personal/add",
+      icon: IconLibraryPlus,
     },
     {
       title: "Account",
-      url: "/dashboard/account",
+      url: "/personal/account",
       icon: IconUserCircle,
     },
     {
-      title: "Setting",
-      url: "/dashboard/setting",
+      title: "Settings",
+      url: "/personal/setting",
       icon: IconSettings,
-    },
-    // {
-    //   title: "Lifecycle",
-    //   url: "#",
-    //   icon: IconListDetails,
-    // },
-    // {
-    //   title: "Analytics",
-    //   url: "#",
-    //   icon: IconChartBar,
-    // },
-    // {
-    //   title: "Projects",
-    //   url: "#",
-    //   icon: IconFolder,
-    // },
-    // {
-    //   title: "Team",
-    //   url: "#",
-    //   icon: IconUsers,
-    // },
-  ],
-  navClouds: [
-    {
-      title: "Capture",
-      icon: IconCamera,
-      isActive: true,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Proposal",
-      icon: IconFileDescription,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Prompts",
-      icon: IconFileAi,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
     },
   ],
   navSecondary: [
@@ -130,27 +55,10 @@ const data = {
       icon: IconHome,
     },
     {
-      title: "Clone Repository",
-      url: "https://github.com/Achour/nextjs-better-auth",
-      icon: IconCopy,
+      title: "GitHub",
+      url: "https://github.com/AstraBert/did-i-do-it",
+      icon: IconBrandGithub,
     },
-  ],
-  documents: [
-    // {
-    //   name: "Data Library",
-    //   url: "#",
-    //   icon: IconDatabase,
-    // },
-    // {
-    //   name: "Reports",
-    //   url: "#",
-    //   icon: IconReport,
-    // },
-    // {
-    //   name: "Word Assistant",
-    //   url: "#",
-    //   icon: IconFileWord,
-    // },
   ],
 };
 
@@ -171,9 +79,9 @@ export function AppSidebar({ user, ...props }: AppSidebarProps) {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <a href="#">
-                <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">Dashboard</span>
+              <a href="/">
+                <IconBubblePlus className="!size-5 text-purple-400" />
+                <span className="text-base font-semibold text-purple-400">Did I Do It?</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

@@ -8,11 +8,11 @@ export async function middleware(request: NextRequest) {
 
   // Redirect authenticated users away from login/signup pages
   if (sessionCookie && ["/login", "/signup"].includes(pathname)) {
-    return NextResponse.redirect(new URL("/dashboard", request.url));
+    return NextResponse.redirect(new URL("/personal", request.url));
   }
 
   // Redirect unauthenticated users trying to access protected routes
-  if (!sessionCookie && pathname.startsWith("/dashboard")) {
+  if (!sessionCookie && pathname.startsWith("/personal")) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
@@ -20,5 +20,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard", "/login", "/signup"], // Apply middleware to these routes
+  matcher: ["/personal", "/login", "/signup"], // Apply middleware to these routes
 };

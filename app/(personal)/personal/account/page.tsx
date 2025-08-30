@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { IconH1, IconLoader } from "@tabler/icons-react";
+import { IconLoader } from "@tabler/icons-react";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -51,7 +51,7 @@ export default function Page() {
   ) : (
     <>
       <div className="px-4 lg:px-6">
-        <h1 className="text-lg font-medium">Account Setting</h1>
+        <h1 className="text-lg font-medium dark:text-purple-300 text-purple-400">Account Setting</h1>
         <p className="text-sm text-muted-foreground mb-2">
           Edit your account information
         </p>
@@ -59,18 +59,18 @@ export default function Page() {
         <form className="lg:w-1/2">
           <div className="flex flex-col gap-6">
             <div className="grid gap-3">
-              <Label htmlFor="email">Full Name</Label>
+              <Label htmlFor="email" className="dark:text-purple-300 text-purple-400">Full Name</Label>
               <Input
                 onChange={(e) => setFullname(e.target.value)}
                 value={fullname}
                 id="name"
                 type="text"
-                placeholder="Achour Meguenni"
+                placeholder="Johanna Doe"
                 required
               />
             </div>
             <div className="grid gap-3">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email" className="dark:text-purple-300 text-purple-400">Email</Label>
               <Input
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
@@ -82,7 +82,7 @@ export default function Page() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <Button disabled={loading} type="submit" className="w-full">
+              <Button disabled={loading} type="submit" className="w-full bg-purple-300 dark:bg-purple-500 dark:hover:bg-white dark:hover:text-purple-500 dark:text-white text-black hover:bg-purple-500 hover:text-white shadow-lg">
                 {loading ? (
                   <IconLoader className="animate-spin" stroke={2} />
                 ) : (
@@ -90,12 +90,6 @@ export default function Page() {
                 )}
               </Button>
             </div>
-          </div>
-          <div className="mt-4 text-center text-sm">
-            Forgot your password?{" "}
-            <a href="/login" className="underline underline-offset-4">
-              Reset password
-            </a>
           </div>
         </form>
       </div>

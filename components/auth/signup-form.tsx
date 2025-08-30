@@ -59,7 +59,7 @@ export function SignupForm({
         onSuccess: (ctx) => {
           // redirect to the dashboard
           //alert("Logged in successfully");
-          router.push("/dashboard");
+          router.push("/personal");
         },
         onError: (ctx) => {
           // display the error message
@@ -74,7 +74,7 @@ export function SignupForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle>Create an account</CardTitle>
+          <CardTitle className="text-purple-400">Create an account</CardTitle>
           <CardDescription>Get started with your new account</CardDescription>
         </CardHeader>
         <CardContent>
@@ -87,36 +87,30 @@ export function SignupForm({
           <form onSubmit={(e) => handleSubmit(e)}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-3">
-                <Label htmlFor="email">Full Name</Label>
+                <Label htmlFor="email" className="font-semibold text-purple-400">Full Name</Label>
                 <Input
                   onChange={(e) => setFullname(e.target.value)}
                   value={fullname}
                   id="name"
                   type="text"
-                  placeholder="Achour Meguenni"
+                  placeholder="Johanna Doe"
                   required
                 />
               </div>
               <div className="grid gap-3">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email" className="font-semibold text-purple-400">Email</Label>
                 <Input
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                   id="email"
                   type="email"
-                  placeholder="me@example.com"
+                  placeholder="johanna.doe@example.com"
                   required
                 />
               </div>
               <div className="grid gap-3">
                 <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                  <a
-                    href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                  >
-                    Forgot your password?
-                  </a>
+                  <Label htmlFor="password" className="font-semibold text-purple-400">Password</Label>
                 </div>
                 <Input
                   onChange={(e) => setPassword(e.target.value)}
@@ -127,21 +121,18 @@ export function SignupForm({
                 />
               </div>
               <div className="flex flex-col gap-3">
-                <Button disabled={loading} type="submit" className="w-full">
+                <Button disabled={loading} type="submit" className="w-full bg-purple-300 dark:bg-purple-500 dark:hover:bg-white dark:hover:text-purple-500 dark:text-white text-black hover:bg-purple-500 hover:text-white shadow-lg">
                   {loading ? (
                     <IconLoader className="animate-spin" stroke={2} />
                   ) : (
                     "Sign Up"
                   )}
                 </Button>
-                <Button variant="outline" className="w-full">
-                  Sign Up with Google
-                </Button>
               </div>
             </div>
             <div className="mt-4 text-center text-sm">
               Already have an account?{" "}
-              <a href="/login" className="underline underline-offset-4">
+              <a href="/login" className="underline underline-offset-4 text-purple-400 hover:text-purple-600 dark:hover:text-white">
                 Login
               </a>
             </div>
