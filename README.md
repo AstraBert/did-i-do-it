@@ -1,8 +1,8 @@
-# Next.js + Better Auth + Prisma Starter Kit
+# did-i-do-it
 
-🚀 A starter kit for building modern web applications with **Next.js 15**, **Better Auth**, **Prisma**, and **shadcn/ui**.
+DIDI (short for Did-I-Do-It?) is an app for people who forget, in their day-to-day life, which tasks they completed and which ones not. The idea is simple: you create tasks and, once you completed them, you do not only have the reward of feeling productive, but also a physical proof that yes, you did it - an email.
 
-🔗 **[Live Demo](https://nextjs-better-auth-starterkit.vercel.app)**
+🔗 **[Try It Now](https://dididoit.clelia.dev)**
 
 ## 📌 Features
 
@@ -10,15 +10,15 @@
 - ✅ **Better Auth** for authentication
 - ✅ **Prisma** for database management
 - ✅ **shadcn/ui** for UI components
-- ✅ **Dashboard** for authenticated users
+- ✅ **Personal Space** for task management once you are authenticated
 - ✅ TypeScript support
 
 ## 📦 Installation
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/Achour/nextjs-better-auth.git
-   cd nextjs-better-auth
+   git clone https://github.com/AstraBert/did-i-do-it
+   cd did-i-do-it
    ```
 2. Install dependencies:
    ```sh
@@ -49,14 +49,6 @@
 - Use `npx prisma studio` to manage your database visually.
 - Customize authentication using Better Auth settings.
 
-## 🛠️ Tech Stack
+--- 
 
-- **Next.js 15** - React framework
-- **Better Auth** - Authentication
-- **Prisma** - Database ORM
-- **shadcn/ui** - UI components
-- **TypeScript** - Type safety
-
----
-
-Made with ❤️ by [Achour Meguenni](https://github.com/Achour)
+Shout out to [Achour Meguenni](https://github.com/Achour) for making the starter project on which this app is built!
